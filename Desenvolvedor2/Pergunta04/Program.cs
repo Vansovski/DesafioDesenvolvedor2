@@ -18,8 +18,14 @@ class Program
         listFaturamentoUF.Add(new FaturamentoUF { Uf = "MG", Valor = 29229.88 });
         listFaturamentoUF.Add(new FaturamentoUF { Uf = "ES", Valor = 27165.48 });
         listFaturamentoUF.Add(new FaturamentoUF { Uf = "Outros", Valor = 19849.53 });
-    
-       
-    
+
+
+        double totalFaturamento = listFaturamentoUF.Sum(faturamento => faturamento.Valor);
+
+        foreach (var item in listFaturamentoUF)
+        {
+            Console.WriteLine($"O faturamento do estado {item.Uf} em percentual foi de {Math.Round((item.Valor/totalFaturamento)*100,2)}");
+        }
+
     }
 }
