@@ -9,8 +9,14 @@ if (int.TryParse(possivelFibo, out int numero))
 {
 
 
-
-
+    if (Fibonacci(numero))
+    {
+        Console.WriteLine("O número digitado pertence à sequência de Fibonacci.");
+    }
+    else
+    {
+        Console.WriteLine("O número digitado não pertence à sequência de Fibonacci.");
+    }
 }
 else
 {
@@ -23,7 +29,7 @@ bool Fibonacci(int numero)
     int a = 0;
     int b = 1;
 
-   
+
     if (numero == 0 || numero == 1)
         return true;
 
