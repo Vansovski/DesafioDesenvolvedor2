@@ -21,11 +21,11 @@ class Program
 
             var listFaturamento = JsonConvert.DeserializeObject<List<Faturamento>>(json);
 
-            var menorFaturamento = listFaturamento?.Min(d => d.Valor);
-
-            Console.WriteLine($"O menor valor de faturamento foi: {menorFaturamento}");
+            var menorFaturamento = listFaturamento?.OrderBy(x => x.Valor).First(); 
 
 
+
+            Console.WriteLine($"O menor valor de faturamento foi: {menorFaturamento?.Valor} no dia {menorFaturamento?.Dia}");
 
         }
         catch (Exception ex)
